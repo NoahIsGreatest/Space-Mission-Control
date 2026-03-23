@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSDeep Space Mission Control</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<body>
+<div class="dashboard">
+
+    <!-- LEFT SIDE -->
+    <div class="left-panel">
+
+        <div class="panel">
+            <h2>Telemetry</h2>
+            <p id="altitude">Altitude: 0 km</p>
+            <p id="speed">Speed: 0 km</p>
+            <p id="fuel">Fuel: 100%</p>
+        </div>
+
+        <div class="panel controls">
+            <h2>Controls</h2>
+            <button class="mc-btn" id="launch">Launch</button>
+            <button class="mc-btn" id="abort">Abort</button>
+            <button class="mc-btn" id="boost">Boost</button>
+        </div>
+
+        <div class="panel" id="mission_log">
+            <h2>Mission Log</h2>
+            <div class="mission-log" id="log">
+                <p>[SYSTEM] Ready</p>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="panel radar-panel">
+        <h2>Radar</h2>
+        <div class="radar">
+            <div class="sweep"></div>
+        </div>
+    </div>
+
+</div>
+<script src="{{ url_for('static', filename='script.js')}}"></script>
+</body>
+</html>

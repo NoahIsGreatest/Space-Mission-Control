@@ -1,0 +1,138 @@
+/* RESET */
+body {
+    margin: 0;
+    background: black;
+    color: lime;
+    font-family: monospace;
+}
+
+/* DASHBOARD LAYOUT */
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    gap: 10px;
+    padding: 10px;
+}
+
+/* LEFT SIDE STACK */
+.left-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* PANELS */
+.panel {
+    border: 2px solid lime;
+    padding: 15px;
+    background: #111;
+}
+
+/* PANEL TITLES */
+.panel h2 {
+    margin-top: 0;
+    border-bottom: 1px solid lime;
+    padding-bottom: 5px;
+}
+
+/* CONTROLS */
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* BUTTONS */
+.mc-btn {
+    background: black;
+    color: lime;
+    border: 2px solid lime;
+    padding: 10px;
+    cursor: pointer;
+    font-family: monospace;
+    transition: all 0.2s ease;
+}
+
+.mc-btn:hover {
+    background: lime;
+    color: black;
+    box-shadow: 0 0 10px lime, 0 0 20px lime;
+}
+
+.mc-btn:active {
+    transform: scale(0.95);
+}
+
+/* RADAR PANEL */
+.radar-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* RADAR CIRCLE */
+.radar {
+    width: 300px;
+    height: 300px;
+    border: 2px solid lime;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* RADAR GRID LINES (crosshair) */
+.radar::before,
+.radar::after {
+    content: "";
+    position: absolute;
+    background: lime;
+}
+
+/* vertical line */
+.radar::before {
+    width: 2px;
+    height: 100%;
+    left: 50%;
+    top: 0;
+}
+
+/* horizontal line */
+.radar::after {
+    height: 2px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+}
+
+/* RADAR SWEEP LINE */
+.sweep {
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background: lime;
+    top: 50%;
+    left: 50%;
+    transform-origin: left center;
+    animation: sweep 2s linear infinite;
+}
+
+.mission-log {
+    height: 150px;        /* fixed height */
+    overflow-y: auto;     /* enables vertical scrolling */
+    border-top: 1px solid lime;
+    padding-top: 5px;
+}
+
+
+
+/* SWEEP ANIMATION */
+@keyframes sweep {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
